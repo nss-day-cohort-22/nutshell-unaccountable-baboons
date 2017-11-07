@@ -18,8 +18,8 @@ You will be utilizing all of the skills and concepts that you've learned up to t
 
 To start you off, here's an example of what the database should look like once it's populated with some data from your application.
 
-```js
-const NutshellDatabase = {
+
+```const NutshellDatabase = {
     "users": [
         { "id": 1, "username": "Steve", "email": "me@me.com" },
         { "id": 2, "username": "Mark", "email": "you@you.com" },
@@ -32,14 +32,15 @@ const NutshellDatabase = {
         { "id": 1, "userId": 2, "url": "https://www.quantamagazine.org/newfound-wormhole-allows-information-to-escape-black-holes-20171023/", "note": "Check out this recent discovery about workholes" }
     ],
     "friends": [
-        { "userId": 1, "friendId": 3 },
-        { "userId": 1, "friendId": 2 }
+        { "connectionId": 1, "userId": 1, "friendId": 3 },
+        { "connectionId": 2, "userId": 1, "friendId": 2 }
     ],
     "tasks": [
         { "id": 1, "userId": 3, "task": "Take out garbage" }
     ]
 }
 ```
+
 
 ## Professional Requirements
 
