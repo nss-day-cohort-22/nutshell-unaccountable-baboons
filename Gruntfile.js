@@ -12,20 +12,19 @@ module.exports = function foo(grunt) {
         },
       },
       uglify: {
-            options: {
-                banner: "/*! <%= pkg.name %> <%= grunt.template.today(yyyy-mm-dd) %> */
-"
-            },
-            build: {
-                files: [{
-                    expand: true,
-                    cwd: "build",
-                    src: "bundle.js",
-                    dest: "build",
-                    ext: ".min.js"
-                }]
-            }
+        options: {
+            banner: "/*! <%= pkg.name %> <%= grunt.template.today('yyyy-mm-dd') %> */\n"
         },
+        build: {
+            files: [{
+                expand: true,
+                cwd: "build",
+                src: "bundle.js",
+                dest: "build",
+                ext: ".min.js"
+            }]
+        }
+    },
       browserify: {
         dist: {
           files: {
