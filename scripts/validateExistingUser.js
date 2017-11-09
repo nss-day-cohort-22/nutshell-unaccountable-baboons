@@ -1,4 +1,4 @@
-//Author                //Purpose This function is called when an existing user clicks on the "Login" button on the welcome form. 
+//Author                //Purpose This function is called when an existing user clicks on the "Login" button on the welcome form.
 
 
 //When user clicks on "LOGIN"
