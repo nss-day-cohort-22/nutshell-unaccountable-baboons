@@ -9,17 +9,33 @@
 </head>
 
 <body>
-  <nav></nav>
 
-  <header></header>
+  <section class="login hidden">
+    <div class="login__usernamePrompt">
+      Username: 
+    </div>
+    <div class="login__usernameInput">
+      <input type="text" name="username">
+    </div>
+    <div class="login__emailPrompt">
+        Email:
+    </div>
+    <div class="login__emailInput">
+      <input type="text" name="email">
+    </div>
+    <button class="button button--newAccount">New account</button>
+    <button class="button button--login">Login</button>
+  </section>
 
-  <article>
-    <header></header>
-    <section></section>
-    <footer></footer>
-  </article>
-
-  <footer></footer>
+  <section class="grid hidden">
+      <nav class="navbar">All the things in a nutshell!</nav>
+      <header class="tasks"></header>
+      <section class="events"></section>
+      <section class="news"></section>
+      <section class="chat"></section>
+      <section class="friends"></section>
+      <footer class="footer"></footer>
+    </section>
 
   <script src="./scripts/main.js"></script>
 </body>
