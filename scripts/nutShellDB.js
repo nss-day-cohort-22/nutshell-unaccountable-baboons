@@ -2,11 +2,11 @@
 const nutshellDB = function (){
     //set database to = whatever is in local storage
     let database = JSON.parse(localStorage.getItem("NutShellDB"))
-        if (database){
+        if (database !== null){
             console.log("we have localstorage")
          //if database does not exist set database to empty arrays
         }else{
-                let database = {
+                database = {
                 "users":[],//{"id": 1 "username": koolkev "email": koolkev@mail}
                 "events":[],//{"id": 1 "userId": 1 "name": Foo " date": 1/1/18 "location": 123 Fooville st.}
                 "tasks":[],//{"id": 1 "userId": 1 "name": task name "expectedCompletion" : 1/1/18}
