@@ -9,7 +9,6 @@ const login = document.querySelector(".button--login")
 
 register.addEventListener("click", (event) => {
     console.log("clicked on new account");
-    debugger
     const username = document.querySelector("input[name='username']").value
     const email = document.querySelector("input[name='email']").value
     const newUser = userFactory(username, email)
