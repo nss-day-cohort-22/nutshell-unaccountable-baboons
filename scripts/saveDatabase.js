@@ -1,4 +1,4 @@
-const saveDatabase = function (database) {
-    localStorage.setItem("NutShellDB",JSON.stringify(database))
+const saveDatabase = function (db) {
+    localStorage.setItem("nutShellDB", JSON.stringify(db))
 }
 module.exports = saveDatabase

@@ -4,10 +4,10 @@ const nutshell = require("./nutShellDB")
 
 const localInterface = Object.create(null, {
    "load": {
-        value: () => JSON.parse(localStorage.getItem("nutshellDB")) || {}
+        value: () => JSON.parse(localStorage.getItem("nutShellDB")) || {}
    },
    "save": {
-        value: nutshellDb => localStorage.setItem("nutShellDB", JSON.stringify(nutshell))
+        value: db => localStorage.setItem("nutShellDB", JSON.stringify(db))
    },
    "clear": {
         value: () => localStorage.setItem("nutShellDB", JSON.stringify({}))

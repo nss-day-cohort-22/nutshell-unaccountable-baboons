@@ -1,4 +1,3 @@
-const dataBase = require ("./nutShellDB")
 const userFactory = require("./userFactory")
 const addUser = require("./addUserToDatabase")
 const setVisibility = require("./setVisibility")
@@ -23,5 +22,4 @@ register.addEventListener("click", (event) => {
     setVisibility(appEl, "show")
     //set current user as active user
     setActiveUser(newUser)
-    console.log(dataBase)
 })
