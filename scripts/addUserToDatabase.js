@@ -1,7 +1,10 @@
-const getDatabase = require("./nutShellDB")
+const database = require("./nutShellDB")
+const saveDatabase = require("./saveDatabase")
 
 const addUser = function(user) {
-    getDatabase.users.push(user)
+    let updatedDatabase = database()
+    updatedDatabase.users.push(user)
+    saveDatabase(updatedDatabase)
 }
 
 module.exports = addUser
