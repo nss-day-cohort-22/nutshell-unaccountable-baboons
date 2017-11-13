@@ -2,6 +2,7 @@
 const database = require("./nutShellDB")
 const setActiveUser = require("./activeUser")
 const setVisibility = require("./setVisibility")
+//this variable will dictate what messages are displayed to the user
 let found = false
 const validateExistingUser = (username, email) => {
     //first check and see if they have entered anything in the input fields
@@ -24,36 +25,13 @@ const validateExistingUser = (username, email) => {
                setVisibility(appEl, "show")
             }
         }
+        //if user is not found - display message to user
         if (found === false){
             alert("Sorry, we could not find your username and/or email in our system, please try again!")
         }
     }else{
+        //if user leaves username or email blank display message to user
         alert("Sorry the username and or email cannot be blank, please try again")
     }
-
-
-
-
-
-        /* existingUsers.forEach(user => {
-            console.log("user",user.username , user.email)
-            //check if the username and email in the existingusers array match the entered data
-            if (user.username === username && user.email === email){
-                //if found, set the user to the active user
-                console.log("user found")
-                setActiveUser(user)
-            } else {
-                console.log("sorry not found")
-                //alert("Sorry we were unable to find that username/email in our system, please verify and try again")
-            }
-        })
-    } else {
-        alert("Sorry, the username and or email cannot be blank, please try again")
-    } */
 }
 module.exports = validateExistingUser
-//When user clicks on "LOGIN"
-//Validate that userName exists && Validate that email exist
-// if exists - retrieve user information
-// display dashboard
-// ELSE - display error message on welcome screen
