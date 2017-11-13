@@ -4,6 +4,7 @@ const nutShellDB = function (){
     let database = JSON.parse(localStorage.getItem("nutShellDB"))
         if (database !== null){
             console.log("we have localstorage")
+            console.log(database)
          //if database does not exist set database to empty arrays
         }else{
                 database = {
