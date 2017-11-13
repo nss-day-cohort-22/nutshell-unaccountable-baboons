@@ -30,41 +30,55 @@
 
   <section class="grid hidden">
     <nav class="navbar">All the things in a nutshell!</nav>
-    <header class="tasks"> <!-- Should this be a section?? -->
-      <div class="task__completionPrompt">
-        Completion Date:
-      </div>
-      <div class="task__completion">
-        <input type="date" name="completion">
-      </div>
+
+    <section class="tasks">
       <div class="task__taskPrompt">
         Task Name:
       </div>
       <div class="task__name">
         <input type="text" name="taskname">
       </div>
-      <button class="task__button">update task</button>
-    </header>
+
+      <div class="task__completionPrompt">
+        Expected Completion Date:
+      </div>
+      <div class="task__completion">
+        <input type="date" name="completion">
+      </div>
+
+      <button class="task__button">Save Task</button>
+      
+    </section>
+    
+    
     <section class="events">
-      <div class="event__eventDate">
-        Event Date:
-      </div>
-      <div class="event__location">
-        <input type="date" name="eventDate">
-      </div>
+      
       <div class="event__eventPrompt">
         Event Name:
       </div>
       <div class="event__name">
         <input type="text" name="eventname">
       </div>
+      
+      <div class="event__eventDatePrompt">
+        Event Date:
+      </div>
+      <div class="event__eventDate">
+        <input type="date" name="eventDate">
+      </div>
+      
       <div class="event__eventLocation">
         Event Location:
       </div>
       <div class="event__location">
         <input type="text" name="eventLocation">
       </div>
+      
+      <button class="event__button">Save Event</button>
+      
     </section>
+    
+    
     <section class="news">
       <div class=“article__articlePrompt”>
         Article Title:
@@ -72,22 +86,25 @@
       <div class=“article__title”>
         <input type=“text” name=“articleTitle”>
       </div>
-
+      
       <div class=“article__urlPrompt”>
         Article URL:
       </div>
       <div class=“article__url”>
         <input type=“url” name=“Url for the article”>
       </div>
-
+      
       <div class=“article__descriptionPrompt”>
         Article Description:
       </div>
       <div class=“article__description”>
         <input type=“text” name=“Short description of the article.“>
       </div>
-
+      
+      <button class="article__button">Save Article</button>
     </section>
+
+
     <section class="chat">
       <div class=“chat__Prompt”>
         Enter Message:
@@ -95,11 +112,22 @@
       <div class=“chat__input”>
         <input type=“text” name=“chat_input“>
       </div>
-      <button class="chat__button">send message</button>
+
+      <button class="chat__button">Send Message</button>
+
     </section>
-    <section class="friends"></section>
-    <footer class="footer"></footer>
+
+    <section class="friends">
+
+    </section>
+
+
   </section>
+
+  <footer class="footer">
+    <p>nutshell inc &copy;</p>
+  </footer>
+  
 
   <script src="./build/bundle.js"></script>
 </body>
