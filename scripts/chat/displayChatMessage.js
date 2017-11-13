@@ -25,7 +25,7 @@ if (database !== null){
                 <p>${existingMessages.message} </p>
             `
 });
- //if database does not exist set database to empty arrays
+ //if there are no chats yet display message
 }else{
     `
     <article class = "chats">
@@ -35,7 +35,7 @@ if (database !== null){
 }
 
 
-// look for new messages
+// look for new messages - add this later
 
 //export this module
 module.exports = messages
