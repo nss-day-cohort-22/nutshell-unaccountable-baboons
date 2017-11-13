@@ -4,6 +4,7 @@ const setVisibility = require("./setVisibility")
 const setActiveUser = require("./activeUser")
 const register = document.querySelector(".button--newAccount")
 const login = document.querySelector(".button--login")
+const validateExistingUser = require("./validateExistingUser")
 
 
 register.addEventListener("click", (event) => {
@@ -23,3 +24,11 @@ register.addEventListener("click", (event) => {
     //set current user as active user
     setActiveUser(newUser)
 })
+
+login.addEventListener("click", (event)=>{
+    //grab the username and email from the login form
+    const username = document.querySelector("input[name='username']").value
+    const email = document.querySelector("input[name='email']").value
+    //pass the username and email to the validateExistingUser Module \
+    validateExistingUser(username, email)
+   })
