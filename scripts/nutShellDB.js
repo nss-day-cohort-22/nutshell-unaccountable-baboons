@@ -15,6 +15,7 @@ const nutShellDB = function (){
                 "friends":[],//{"id": 1 "userId": 1 "friendId": 1}
                 "articles":[],//{"id": 1 "userId": 1 "title": Foo "synopsis": stuff happened "url": www.website.com "timeStamp" : date.now()}
             }
+            console.log(database)
         }
     //return the database
     return database
