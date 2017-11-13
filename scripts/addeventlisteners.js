@@ -1,16 +1,18 @@
+//author Ray  //Purpose: This module adds event listeners to the register and login buttons on the welcome screen
 const userFactory = require("./userFactory")
 const addUser = require("./addUserToDatabase")
 const setVisibility = require("./setVisibility")
 const setActiveUser = require("./activeUser")
+const validateExistingUser = require("./validateExistingUser")
 const register = document.querySelector(".button--newAccount")
 const login = document.querySelector(".button--login")
-const validateExistingUser = require("./validateExistingUser")
 
-
+//add event listener to the register button
 register.addEventListener("click", (event) => {
-    console.log("clicked on new account");
+    //grab the username and email entered into the form
     const username = document.querySelector("input[name='username']").value
     const email = document.querySelector("input[name='email']").value
+    //pass the username and email to the userFactory -- lines 16-28 this will be moved to the newUserValidation module eventually.
     const newUser = userFactory(username, email)
 
     //add user to database
@@ -24,7 +26,7 @@ register.addEventListener("click", (event) => {
     //set current user as active user
     setActiveUser(newUser)
 })
-
+//add eventlistener to the login button
 login.addEventListener("click", (event)=>{
     //grab the username and email from the login form
     const username = document.querySelector("input[name='username']").value
