@@ -6,6 +6,9 @@ const setActiveUser = require("./activeUser")
 const validateExistingUser = require("./validateExistingUser")
 const register = document.querySelector(".button--newAccount")
 const login = document.querySelector(".button--login")
+const chat = require("./chat/displayChatMessage")
+const database = require("./nutShellDB")
+
 
 //add event listener to the register button
 register.addEventListener("click", (event) => {
@@ -25,7 +28,10 @@ register.addEventListener("click", (event) => {
     setVisibility(appEl, "show")
     //set current user as active user
     setActiveUser(newUser)
+    chat(database)
 })
+
+
 //add eventlistener to the login button
 login.addEventListener("click", (event)=>{
     //grab the username and email from the login form
