@@ -10,7 +10,7 @@
  const taskFactory = function (taskName, completionDate) {
     //
     let tasks = db.tasks;
-    let nextId;
+    let nextId
 
     //sorting the tasks.  If there is no tasks in local storage, start at one.  Otherwise, look at the last assigned ID in local storage and add one to create the new ID.
 
@@ -22,6 +22,10 @@
     }
 
      return Object.create(null, {
+         "Task_ID" : {
+            value: nextId.next().value,
+            enumerable: true
+         },
          "Task_Name" : {
              value: taskName,
              enumerable: true
@@ -29,7 +33,12 @@
          "Completion_Date" : {
              value: completionDate,
              enumerable: true
+         },
+         "Complete": {
+             value: false,
+             enumerable: true
          }
      })
  }
+
  module.exports = taskFactory
