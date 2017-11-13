@@ -1,7 +1,8 @@
  //Author:  Erin
 
  //Purpose: Create new task object with info passed from addEventHandlerTasks.js
- const nutshell = require("../nutShellDB.js")
+ const nutshell = require("../nutShellDB")
+ const idGenerator = require("../idGenerator")
 
  let db = nutshell();
 
