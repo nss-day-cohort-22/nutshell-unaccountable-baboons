@@ -6,42 +6,69 @@ const userFactory = require("./userFactory")
 const addUser = require("./addUserToDatabase")
 //this variable will dictate what messages are displayed to the user
 let found = false
+let existing = false
 const validateNewUser = (username, email) => {
     //first check and see if they have entered anything in the input fields
-    if (username || email !== ""){
-        //grab the user array from the database
-        let nutshell = database()
-        let existingUsers = nutshell.users
-        //iterate over each of the existing Users
-        for (let i = 0; i < existingUsers.length; i++){
-            let currentUser = existingUsers[i]
-            if (currentUser.username === username || currentUser.email === email){
-                //if the username or email are aleady in the users array set the found variable equal to true
-                found = true
+    if (username === "" || email === ""){ //FIRST IF START
+        console.log("everything is blank (the beginning)")
+        //if the username and or email fields are blank - send message to user
+        alert("Sorry, the name and email fields cannot be blank please check them and try again!")
 
-            }else {
-                //pass the username and email to the userFactory -- lines 16-28 this will be moved to the newUserValidation module eventually.
-                const newUser = userFactory(username, email)
-                //add user to database
-                addUser(newUser)
-                //hide authorization form
-                const formEl = document.querySelector(".login")
-                setVisibility(formEl , "hide")
-                //unhide nutshell app
-                const appEl = document.querySelector(".grid")
-                setVisibility(appEl, "show")
-                //set current user as active user
-                setActiveUser(newUser)
+        } //END OF SECOND IF
+            else //BEGIN SECOND IF - ELSE
+               { //grab the user array from the database
+                let nutshell = database()
+                let existingUsers = nutshell.users
+                //check to see if there are any users to iterate over first
+                    if (existingUsers.length < 1){ //SECOND IF START
+                        console.log("there are no users in the database - creating one")
+                        //if no users exist, create the user and add it to the database
+                        const newUser = userFactory(username, email)
+                        addUser(newUser)
+                        //hide authorization form
+                        const formEl = document.querySelector(".login")
+                        setVisibility(formEl , "hide")
+                        //unhide nutshell app
+                        const appEl = document.querySelector(".grid")
+                        setVisibility(appEl, "show")
+                        //set current user as active user
+                        setActiveUser(newUser)
+
+                } else {
+                    existing = true
+                     //if there are users in the database, iterate over them
+                console.log("There are users in the database - lets look at them")
+                for (let i = 0; i < existingUsers.length ; i++) {
+                //check each username and email to see if it already exists
+                const currentUser = existingUsers[i]
+                console.log("we are about to look through existing users")
+                if(currentUser.username === username || currentUser.email === email){
+                    //if either username or email exist already set found to true
+                    console.log("i found a match! in the existing users")
+                    found = true
+                }
             }
+
         }
-        //if user is found - display message to user
-        if (found === true){
-            alert("Sorry, we could not find your username and/or email in our system, please try again!")
-        }
-    }else{
-        //if user leaves username or email blank display message to user
-        alert("Sorry the username and or email cannot be blank, please try again")
-    }
+    } //END OF FIRST IF
+    if (found === true){
+        console.log("stuff is true")
+        alert("Sorry that username or email are already taken, please try a new one")
+        found = false
+    } else  if((username !== "" || email !== "") && existing === true){
+        console.log("i didn't find an existing user, so I guess ill make one and set it active")
+        //if the requested new user and email do not exist in the database add the newUser to the database
+        const newUser = userFactory(username, email)
+        addUser(newUser)
+        //hide authorization form
+        const formEl = document.querySelector(".login")
+        setVisibility(formEl , "hide")
+        //unhide nutshell app
+        const appEl = document.querySelector(".grid")
+        setVisibility(appEl, "show")
+        //set current user as active user
+        setActiveUser(newUser)}
+
 }
 module.exports = validateNewUser
 
