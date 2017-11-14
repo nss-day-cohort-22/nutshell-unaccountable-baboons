@@ -5,11 +5,16 @@
   <meta charset="utf-8">
   <title>Nashville Software School</title>
   <link rel="stylesheet" href="./styles/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:600" rel="stylesheet">
 
 </head>
 
 <body>
+  <header>
+    <img src="./img/nutshellLogo.png" alt="smiling nut">
+    <div class="navbar" align="center">All the things in a nutshell!</div>
+  </header>
 
   <section class="login hidden">
     <div class="login__usernamePrompt">
@@ -29,110 +34,118 @@
   </section>
 
   <section class="grid hidden">
-    <nav class="navbar">All the things in a nutshell!</nav>
 
-    <section class="tasks">
-      <div class="task__taskPrompt">
-        Task Name:
+    <section class="tasks one ">
+    <div class="display_tasks">
+      <!-- tasks will be displayed here -->
+    </div>
+    <div class="taskForm hidden">
+        <div class="task__taskPrompt">
+          Task Name:
+        </div>
+        <div class="task__name">
+          <input type="text" name="taskname">
+        </div>
+        
+        <div class="task__completionPrompt">
+          Expected Completion Date:
+        </div>
+        <div class="task__completion">
+          <input type="date" name="completion">
+        </div>
+        <button class="task__button">Save Task</button>
+      </section>
+    </div>
+    
+    <section class="events four">
+      <div class="display_events">
+        <!-- events will be displayed here -->
       </div>
-      <div class="task__name">
-        <input type="text" name="taskname">
+      <div class="eventForm hidden">
+        <div class="event__eventPrompt">
+          Event Name:
+        </div>
+        <div class="event__name">
+          <input type="text" name="eventname">
+        </div>
+        
+        <div class="event__eventDatePrompt">
+          Event Date:
+        </div>
+        <div class="event__eventDate">
+          <input type="date" name="eventDate">
+        </div>
+        
+        <div class="event__eventLocation">
+          Event Location:
+        </div>
+        <div class="event__location">
+          <input type="text" name="eventLocation">
+        </div>
+        
+        <button class="event__button">Save Event</button>
       </div>
-
-      <div class="task__completionPrompt">
-        Expected Completion Date:
-      </div>
-      <div class="task__completion">
-        <input type="date" name="completion">
-      </div>
-
-      <button class="task__button">Save Task</button>
       
     </section>
     
-    
-    <section class="events">
-      
-      <div class="event__eventPrompt">
-        Event Name:
+    <section class="news five">
+      <div class="display_articles">
+      <!-- articles will be displayed here -->
       </div>
-      <div class="event__name">
-        <input type="text" name="eventname">
+      <div class="articleForm hidden">
+        <div class=“article__articlePrompt”>
+          Article Title:
+        </div>
+        <div class=“article__title”>
+          <input type=“text” name=“articleTitle”>
+        </div>
+        
+        <div class=“article__urlPrompt”>
+          Article URL:
+        </div>
+        <div class=“article__url”>
+          <input type=“url” name=“Url for the article”>
+        </div>
+        
+        <div class=“article__descriptionPrompt”>
+          Article Description:
+        </div>
+        <div class=“article__description”>
+          <input type=“text” name=“Short description of the article.“>
+        </div>
+        
+        <button class="article__button">Save Article</button>
       </div>
-      
-      <div class="event__eventDatePrompt">
-        Event Date:
-      </div>
-      <div class="event__eventDate">
-        <input type="date" name="eventDate">
-      </div>
-      
-      <div class="event__eventLocation">
-        Event Location:
-      </div>
-      <div class="event__location">
-        <input type="text" name="eventLocation">
-      </div>
-      
-      <button class="button button--saveEvent">Save Event</button>
-      
     </section>
     
-    
-    <section class="news">
-      <div class=“article__articlePrompt”>
-        Article Title:
-      </div>
-      <div class=“article__title”>
-        <input type=“text” name=“articleTitle”>
+    <section class="chat two">
+      <div id="display_chat">
+      <!-- chat window will be displayed here -->      
       </div>
       
-      <div class=“article__urlPrompt”>
-        Article URL:
-      </div>
-      <div class=“article__url”>
-        <input type=“url” name=“Url for the article”>
-      </div>
-      
-      <div class=“article__descriptionPrompt”>
-        Article Description:
-      </div>
-      <div class=“article__description”>
-        <input type=“text” name=“Short description of the article.“>
-      </div>
-      
-      <button class="article__button">Save Article</button>
-    </section>
-
-
-    <section class="chat">
       <div class=“chat__Prompt”>
         Enter Message:
       </div>
       <div class=“chat__input”>
-        <input id="hello" type=“text” class="newChatInput" name=“newChatInput“>
+        <input type=“text” class=“newChatInput“ name="newChatInput">
+      </div><button class="chat__button">Send Message</button>
+    </section>
+    
+    <section class="friends three">
+      <div class="display_friends">
+      <!-- friends will be displayed here -->
+      </div>
+      <div class="friendForm hidden">
+        <input type="text" name="find_friend_input"><button class="friend__button">Add Friend</button>
       </div>
 
-      <button class="chat__button">Send Message</button>
-
     </section>
-
-    <section class="friends">
-
-    </section>
-
-
-  </section>
-
-  <section id=chatMessages>
-    Chat:
   </section>
 
 
-  <footer class="footer">
-    <p>nutshell inc &copy;</p>
+  <footer class="footer" align="center">
+    <p>NUTSHELL INC &copy;</p>
   </footer>
-  
 
   <script src="./build/bundle.js"></script>
 </body>
