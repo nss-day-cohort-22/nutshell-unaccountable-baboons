@@ -1,6 +1,6 @@
 const database = require("../nutShellDB")
 
-
+//This array looks at the current database and sees who is posting the chat message.  It then displays their username next to their chat message in the DOM.
 const findUserName = function(match) {
     const existingUsers = database().users
     console.log(existingUsers, "existingUsers");

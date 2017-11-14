@@ -15,13 +15,6 @@ const displayChatMessages = function (database) {
     const chatEl = document.getElementById("chatMessages")
     const nameEl = document.getElementById("chatname")
 
-    /* chatName.forEach(username => {
-        console.log("usernameCHAT", username.userName)
-        nameEl.innerHTML =
-        nameEl.innerHTML += `
-            <p>${username.userName}</p>
-        `
-    }) */
 
     // See if chat messages exist in the local db
     console.log("length", existingMessages.length)
@@ -30,13 +23,14 @@ const displayChatMessages = function (database) {
         chatEl.innerHTML = ""
         // Iterate through all the messages in the database to show them on the browser
         existingMessages.forEach(messages => {
+            //this find array looks for userID which matches the username used for chat
             let currentUsername = findUserName(messages.userId)
             console.log(messages.chatInput)
             // Write messages and their related userids to the browser
             chatEl.innerHTML +=
                 `
             <article>
-                <p>${currentUsername}</p>
+                <p>${currentUsername}:</p>
                 <p>${messages.chatInput}</p>
             </article>
             `
