@@ -2,18 +2,18 @@
 const nutshell = require("../nutShellDB")
 const idGenerator = require("../idGenerator")
 
-let database = nutshell();
-
-const idMaker = idGenerator()
+let db = nutshell();
+lastIdUsed = db.eventId
+const idMaker = idGenerator(lastIdUsed)
 
 // Create a new task object with taskName and completion date
-const createNewEvent = function (eventName, eventDate, eventLocation) {
+const taskFactory = function (taskName, completionDate) {
    //
    let events = db.events;
    let nextId;
-   //sorting the events.  If there is no event in local storage, start at one.  Otherwise, look at the last events eventId in local storage and add one to create the new event ID.
+   //sorting the users.  If there is no user in local storage, start at one.  Otherwise, look at the last user's userID in local storage and add one to create the new user ID.
    if (events.length !== 0) {
-     let sortedevents = db.events.sort((p,n) => n.eventId - p.eventId)
+     let sortedtasks = db.tasks.sort((p,n) => n.taskId - p.taskId)
      nextId = idMaker.next().value;
    } else {
      nextId = idMaker.next().value;
@@ -23,6 +23,10 @@ const createNewEvent = function (eventName, eventDate, eventLocation) {
         "eventId" : {
            value: nextId,
            enumerable: true
+        },
+        "userId": {
+            value: JSON.parse(sessionStorage.getItem("activeUser")),
+            enumerable : true
         },
         "eventName" : {
             value: eventName,
@@ -35,9 +39,6 @@ const createNewEvent = function (eventName, eventDate, eventLocation) {
         "eventLocation": {
             value: eventLocation,
             enumerable: true
-        },
-        "userID": {
-            value: //jsonparse from session storage
         }
     })
 }
