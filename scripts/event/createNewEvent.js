@@ -7,10 +7,11 @@ lastIdUsed = db.eventId
 const idMaker = idGenerator(lastIdUsed)
 
 // Create a new task object with taskName and completion date
-const taskFactory = function (taskName, completionDate) {
+const createNewEvent = function (eventName, eventDate, eventLocation) {
    //
    let events = db.events;
    let nextId;
+   let currentUserId = JSON.parse(sessionStorage.getItem("activeUser"))
    //sorting the users.  If there is no user in local storage, start at one.  Otherwise, look at the last user's userID in local storage and add one to create the new user ID.
    if (events.length !== 0) {
      let sortedtasks = db.tasks.sort((p,n) => n.taskId - p.taskId)
@@ -25,7 +26,7 @@ const taskFactory = function (taskName, completionDate) {
            enumerable: true
         },
         "userId": {
-            value: JSON.parse(sessionStorage.getItem("activeUser")),
+            value: currentUserId.userId,
             enumerable : true
         },
         "eventName" : {
