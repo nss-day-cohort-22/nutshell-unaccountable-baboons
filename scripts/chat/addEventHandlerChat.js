@@ -1,6 +1,11 @@
 //<(^ -^)>
 const chatFactory = require("./createChatMessage")
 const addChatToDatabase = require("./saveChatToDb")
+const callChat = require("./displayChatMessage")
+const chat = require("./displayChatMessage")
+const database = require("../nutShellDB")
+
+
 //This page will add event listener to chat send message button to eventually write in the chat window
 //Grab "chat__button" via query selector and assign to variable
 const chatButton = document.querySelector(".chat__button")
@@ -15,6 +20,7 @@ chatButton.addEventListener("click", (event) => {
     const newChat = chatFactory(newChatInput)
     //add chat input to local storage
     addChatToDatabase(newChat)
+    chat(database);
 })
 
 
