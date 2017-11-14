@@ -12,6 +12,7 @@ const idMaker = idGenerator(lastIdUsed)
  const chatFactory = function (chatInput) {
     let parseSession = JSON.parse(sessionStorage.getItem("activeUser"))
     let userChatId = parseSession.userId
+    let userName = parseSession.username
     let date = Date.now()
     let chat = db.chat;
     let nextId;
