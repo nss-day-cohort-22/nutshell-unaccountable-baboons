@@ -14,7 +14,7 @@ const chatButton = document.querySelector(".chat__button")
 //add event listener to the button
 chatButton.addEventListener("click", (event) => {
     console.log("You clicked on chat");
-    const newChatInput = document.getElementsByClassName("newChatInput")[0].value
+    const newChatInput = document.querySelector("input[name='newChatInput']").value
     console.log(newChatInput)
     //pass chat input through chat factory
     const newChat = chatFactory(newChatInput)
