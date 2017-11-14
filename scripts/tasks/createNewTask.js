@@ -1,29 +1,29 @@
  //Author:  Erin
 
- //Purpose: Create new task object with info passed from addEventHandlerTasks.js
+ //Purpose: Create new task object to save info passed from addEventHandlerTasks.js
  const nutshell = require("../nutShellDB")
  const idGenerator = require("../idGenerator")
 
  let db = nutshell();
+ lastIdUsed = db.Task_Id
+ const idMaker = idGenerator(lastIdUsed)
 
  // Create a new task object with taskName and completion date
  const taskFactory = function (taskName, completionDate) {
     //
     let tasks = db.tasks;
-    let nextId
-
-    //sorting the tasks.  If there is no tasks in local storage, start at one.  Otherwise, look at the last assigned ID in local storage and add one to create the new ID.
-
+    let nextId;
+    //sorting the users.  If there is no user in local storage, start at one.  Otherwise, look at the last user's userID in local storage and add one to create the new user ID.
     if (tasks.length !== 0) {
-      let sortedTasks = db.tasks.sort((p,n) => n.taskId - p.taskId)
-      nextId = idGenerator(sortedTasks[0].taskId).next().value;
+      let sortedtasks = db.tasks.sort((p,n) => n.taskId - p.taskId)
+      nextId = idMaker.next().value;
     } else {
-      nextId = idGenerator(0).next().value;
+      nextId = idMaker.next().value;
     }
 
      return Object.create(null, {
          "Task_ID" : {
-            value: nextId.next().value,
+            value: nextId,
             enumerable: true
          },
          "Task_Name" : {
