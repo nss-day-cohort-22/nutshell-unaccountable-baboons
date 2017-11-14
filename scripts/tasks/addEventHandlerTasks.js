@@ -15,13 +15,16 @@ taskButton.addEventListener("click", (inputTask) => {
     //Verify the button is working by logging to console
     console.log("You added/updated a task");
 
-    //Create list of const for input of task
+    //Telling the listener where to listen for click
     const completionDate = document.querySelector("input[name='completion']").value
     const taskName = document.querySelector("input[name='taskname']").value
     const newTask = taskFactory(taskName, completionDate)
 
     //add new task to local storage
-    addTask(newTask) //need to create an add task module
+    addTask(newTask)
+
+    //display new task??
+
 })
 
 
