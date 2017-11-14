@@ -7,11 +7,12 @@ html {
 .navbar {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: bold;
+    margin: 20px 0;
 }
 
 .login {
     display: inline-block;
-    margin: 0 auto;
+    margin: 10px auto 20px;
     padding: 20px 40px;
     top: 50%;
     left: 50%;
@@ -23,6 +24,11 @@ html {
 
 button {
     margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #EA6B66;
+    color: #7A5D38;
+    box-shadow: 3px 3px 10px #7A5D38;
+    border-radius: 5px;
 }
 
 input {
@@ -45,11 +51,15 @@ img {
     /* border: solid 1px black; */
     display: grid;
     grid-template-columns: 2fr 3fr 1fr;
+    grid-gap: 10px;
 }
 
 .one, .two, .three, .four, .five {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: bold;
+    border: solid 1px #AD9C7F;
+    background-color: #AD9C7F;
+    box-shadow: 3px 3px 10px #7A5D38;
 }
 
 .one {
@@ -90,6 +100,7 @@ img {
 .navbar {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: bold;
+    font-size: 1.5em;
 }
 
 footer {
