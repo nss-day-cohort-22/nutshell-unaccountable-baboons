@@ -1,8 +1,24 @@
 //author Ray //Purpose this module adds an event listener to the event buttons
+const setVisibility = require("../setVisibility")
 const createNewEvent = require("./createNewEvent")
 const addEvent = require("./saveEventToDb")
+
 //grab the save event button
 const saveEvent = document.querySelector(".event__button")
+
+//grab new event button
+const newEvent = document.querySelector(".display_eventForm")
+
+//grab event form
+const eventForm = document.querySelector(".eventForm")
+
+//add the eventlistener to the saveEvent button
+newEvent.addEventListener("click", (event) => {
+  // hide button
+  setVisibility(newEvent, "hide")
+  // show form
+  setVisibility(eventForm, "show")
+})
 
 //add the eventlistener to the saveEvent button
 saveEvent.addEventListener("click", (event) => {
@@ -15,5 +31,10 @@ saveEvent.addEventListener("click", (event) => {
     //pass the information to the event factory - create new event
   let newEvent =   createNewEvent(eventName, eventDate, eventLocation)
     addEvent(newEvent)
+
+  //hide form
+  setVisibility(eventForm, "hide")
+  //show new event button under displayed tasks
+  setVisibility(newEvent, "show")
 })
 module.exports = saveEvent.addEventListener

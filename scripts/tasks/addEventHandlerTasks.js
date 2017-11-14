@@ -1,7 +1,7 @@
 //Author: Erin
 
 //Purpose: This page will add event listener to tasks add/update task button to post a task
-const setVisibility = require("./setVisibility")
+const setVisibility = require("../setVisibility")
 const taskFactory = require("./createNewTask")
 const addTask = require("./saveTaskToDb")
 
