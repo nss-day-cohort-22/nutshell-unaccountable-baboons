@@ -5,6 +5,7 @@ const addChatToDatabase = require("./saveChatToDb")
 //Grab "chat__button" via query selector and assign to variable
 const chatButton = document.querySelector(".chat__button")
 
+
 //add event listener to the button
 chatButton.addEventListener("click", (event) => {
     console.log("You clicked on chat");

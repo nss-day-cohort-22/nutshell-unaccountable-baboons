@@ -1,28 +1,46 @@
 //Author: Deanna Vickers This module will create the article objects
 
+//Bring in the data we need for this module
 const idGenerator = require("../idGenerator")
 const nutshell = require("../nutShellDB")
+const activeUser = require("../activeUser")
 
+
+//Assign database to a variable so we can use it here
 let db = nutshell();
-lastIdUsed = db.articleId
-const idMaker = idGenerator(lastIdUsed)
+let articleUser = activeUser();
 
+// //Generate ID's for the articles
+// lastIdUsed = db.articleId
+// const idMaker = idGenerator(lastIdUsed)
+
+
+//Set up article factory to create article objects
  const articleFactory = function (
      articleTitle, articleURL, articleDescription) {
     let date = Date.now()
     let articles = db.articles;
     let nextId;
-    //sorting the users.  If there is no user in local storage, start at one.  Otherwise, look at the last user's userID in local storage and add one to create the new user ID.
+
+
+
+    //Sorting the articles.  If there is no article in local storage, start at one.  Otherwise, look at the last user's articleID in local storage and add one to create the new articleID.
     if (articles.length !== 0) {
-      let sortedarticles = db.articles.sort((p,n) => n.articleId - p.articleId)
-      nextId = idMaker.next().value;
+      let sortedArticles = db.articles.sort((p,n) => n.articleId - p.articleId)
+      nextId = idGenerator(sortedArticles[0].articleId).next().value;
     } else {
-      nextId = idMaker.next().value;
+      nextId = idGenerator(0).next().value;
     }
 
+    console.log("creating the object for articles")
+    //Create the object for each article
     return Object.create(null, {
         "articleId" : {
             value: nextId,
+            enumerable: true
+        },
+        "userId" : {
+            value: userId,
             enumerable: true
         },
         "articleTitle" : {

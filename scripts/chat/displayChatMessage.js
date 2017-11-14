@@ -7,14 +7,14 @@ const displayChatMessages = function (database) {
     let existingMessages = database().chat
 
     // const database = require("./nutShellDB");
-    console.log("chatdb", existingMessages)
+    console.log("chatDB", existingMessages)
 
 
     // Set up write option
     const chatEl = document.getElementById("chatMessages")
 
     // See if chat messages exist in the local db
-    console.log("length", existingMessages.length)
+    console.log("length of chat array", existingMessages.length)
     if (existingMessages.length > 0) {
         console.log("we have chats in localstorage")
         // Iterate through all the messages in the database to show them on the browser
@@ -31,7 +31,7 @@ const displayChatMessages = function (database) {
         })
     }
     else {
-        console.log("else stmt");
+        console.log("no chat messages");
         chatEl.innerHTML =
             `
     <article>
