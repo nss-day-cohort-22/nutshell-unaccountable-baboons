@@ -28,7 +28,7 @@ const idMaker = idGenerator(lastIdUsed)
             value: nextId,
             enumerable: true
         },
-        "userChatId" : {
+        "userId" : {
             value: userChatId,
             enumerable: true
         },

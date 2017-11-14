@@ -1,6 +1,7 @@
 // Author Deanna - this module looks for the messages in local storage
 // and displays it on the screen in the chat history
-
+let parseSession = JSON.parse(sessionStorage.getItem("activeUser"))
+let currentUser = parseSession.username
 //wrap in a function
 const displayChatMessages = function (database) {
 
@@ -24,7 +25,7 @@ const displayChatMessages = function (database) {
             chatEl.innerHTML +=
                 `
             <article>
-                <p>${messages.chatInput}</p>
+                <p>${currentUser}: ${messages.chatInput}</p>
             </article>
             `
             //If there are no chats yet display message
