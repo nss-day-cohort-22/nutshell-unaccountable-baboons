@@ -1,11 +1,17 @@
 const idGenerator = require("../idGenerator")
 const nutshell = require("../nutShellDB")
+const activeUser = require("../activeUser")
+
+
+let newActive = sessionStorage.getItem("activeUser")
 
 let db = nutshell();
 lastIdUsed = db.chatId
 const idMaker = idGenerator(lastIdUsed)
 
  const chatFactory = function (chatInput) {
+    let parseSession = JSON.parse(sessionStorage.getItem("activeUser"))
+    let userChatId = parseSession.userId
     let date = Date.now()
     let chat = db.chat;
     let nextId;
@@ -20,6 +26,10 @@ const idMaker = idGenerator(lastIdUsed)
     return Object.create(null, {
         "chatId" : {
             value: nextId,
+            enumerable: true
+        },
+        "userChatId" : {
+            value: userChatId,
             enumerable: true
         },
         "chatInput" : {
