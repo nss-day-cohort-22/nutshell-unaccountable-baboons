@@ -6,7 +6,7 @@ const nutShellDB = function (){
             console.log("we have localstorage")
             console.log(database)
          //if database does not exist set database to empty arrays
-        }else{
+        } else{
                 database = {
                 "users":[],//{"id": 1 "username": koolkev "email": koolkev@mail}
                 "events":[],//{"id": 1 "userId": 1 "name": Foo " date": 1/1/18 "location": 123 Fooville st.}

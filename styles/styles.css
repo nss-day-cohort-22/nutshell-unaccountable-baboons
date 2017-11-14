@@ -1,3 +1,101 @@
+html {
+    background-color: #C7BD9F;
+    color: #7A5D38;
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.navbar {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+}
+
+.login {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 20px 40px;
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    border: solid 1px #AD9C7F;
+    background-color: #AD9C7F;
+    box-shadow: 3px 3px 10px #7A5D38;
+}
+
+button {
+    margin-top: 10px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+body {
+    text-align: center;
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    text-align: left;
+}
+
+
+.grid {
+    /* border: solid 1px black; */
+    display: grid;
+    grid-template-columns: 2fr 3fr 1fr;
+}
+
+.one, .two, .three, .four, .five {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+}
+
+.one {
+    grid-column-start: 1; 
+    grid-column-end: 2; 
+    grid-row-start: 1; 
+    grid-row-end: 2; 
+}
+
+.two {
+    grid-column-start: 2; 
+    grid-column-end: 3; 
+    grid-row-start: 1; 
+    grid-row-end: 2; 
+}
+
+.three {
+    grid-column-start: 3; 
+    grid-column-end: 4; 
+    grid-row-start: 1; 
+    grid-row-end: 2; 
+}
+
+.four {
+    grid-column-start: 1; 
+    grid-column-end: 2; 
+    grid-row-start: 2; 
+    grid-row-end: 3; 
+}
+
+.five {
+    grid-column-start: 2; 
+    grid-column-end: 4; 
+    grid-row-start: 2; 
+    grid-row-end: 3; 
+}
+
+.navbar {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #AD9C7F;
+}
+
 .hidden {
     display: none;
 }
