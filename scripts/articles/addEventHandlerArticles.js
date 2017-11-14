@@ -18,9 +18,9 @@ saveArticleButton.addEventListener("click", (event) => {
     const newUrlInput = document.querySelector("input[name='articleUrl']").value;
     const newDescriptionInput = document.querySelector("input[name='articleDescription']").value;
     console.log("Article Title:", newTitleInput);
-    //Collect article input
+    // Collect article input
     const newArticle = articleFactory(newTitleInput, newUrlInput, newDescriptionInput);
-    //Add article input to local storage
+    // Add article input to local storage
     addArticleToDatabase(newArticle);
     article(database)
 })

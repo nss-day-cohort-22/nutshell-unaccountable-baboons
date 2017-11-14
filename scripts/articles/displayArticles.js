@@ -8,7 +8,7 @@ const displayArticleList = function (database) {
         console.log(database().articles)
 
         // Set up write option
-        const articleEl = document.getElementById("displayArticles")
+        const articleEl = document.getElementById("display_articles")
 
         // See if chat messages exist in the local db
         console.log("length of article array", existingArticles.length)
@@ -20,10 +20,11 @@ const displayArticleList = function (database) {
                 console.log("articleURL",newsArticles.articleURL)
 
                 // Write messages and their related userids to the browser
+                articleEl.innerHTML = ""
                 articleEl.innerHTML +=
                     `
                 <article>
-                    <p>${newsArticles.articleTitle}</p>
+                    <a href="${newsArticles.articleURL}"><p>${newsArticles.articleTitle}</p></a>
                 </article>
                 `
                 //If there are no articles yet, display message
