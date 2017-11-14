@@ -33,7 +33,7 @@ const displayTasks = function (database){
         //and post a check box, task name, and completion date
         taskListEl.innerHTML += `
             <li> <input type="checkbox" name="complete" value="${tasks[0].Task_ID}"> 
-            ${tasks[0].Task_Name} + ${tasks[0].Completion_Date} </li>
+            ${tasks[0].Task_Name} ${tasks[0].Completion_Date} </li>
             `;
     });
 
