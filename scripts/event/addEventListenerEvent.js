@@ -2,7 +2,7 @@
 const createNewEvent = require("./createNewEvent")
 const addEvent = require("./saveEventToDb")
 //grab the save event button
-const saveEvent = document.querySelector(".button--saveEvent")
+const saveEvent = document.querySelector(".event__button")
 
 //add the eventlistener to the saveEvent button
 saveEvent.addEventListener("click", (event) => {

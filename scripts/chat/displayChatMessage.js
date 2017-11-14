@@ -12,8 +12,8 @@ const displayChatMessages = function (database) {
 
 
     // Set up write option
-    const chatEl = document.getElementById("chatMessages")
-    const nameEl = document.getElementById("chatname")
+    const chatEl = document.getElementById("display_chat")
+    //const nameEl = document.getElementById("chatname")
 
 
     // See if chat messages exist in the local db
