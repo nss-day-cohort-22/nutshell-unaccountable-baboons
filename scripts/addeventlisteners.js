@@ -9,6 +9,7 @@ const register = document.querySelector(".button--newAccount")
 const login = document.querySelector(".button--login")
 const chat = require("./chat/displayChatMessage")
 const database = require("./nutShellDB")
+const article = require("./articles/displayArticles")
 
 
 //add event listener to the register button
@@ -19,6 +20,7 @@ register.addEventListener("click", (event) => {
     //pass the username and email to the validateNewUser function when the register button is pressed.
     validateNewUser(username, email)
     chat(database)
+    article(database)
 })
 
 
@@ -30,4 +32,5 @@ login.addEventListener("click", (event)=>{
     //pass the username and email to the validateExistingUser Module \
     validateExistingUser(username, email)
     chat(database)
+    article(database)
 })

@@ -2,6 +2,9 @@
 // This page will add event listener to the save article button
 const articleFactory = require("./createNewArticles")
 const addArticleToDatabase = require("./saveArticleToDb")
+const database = require("../nutShellDB")
+const article = require("./displayArticles")
+
 
 //Assign save article button to variable
 const saveArticleButton = document.querySelector(".article__button")
@@ -19,6 +22,7 @@ saveArticleButton.addEventListener("click", (event) => {
     const newArticle = articleFactory(newTitleInput, newUrlInput, newDescriptionInput);
     //Add article input to local storage
     addArticleToDatabase(newArticle);
+    article(database)
 })
 
 
