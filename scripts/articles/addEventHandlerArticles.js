@@ -13,7 +13,7 @@ const saveArticleButton = document.querySelector(".article__button")
 
 //Add event listener to the button
 saveArticleButton.addEventListener("click", (event) => {
-    console.log("article event handler button");
+    console.log("Article save button is working.");
     const newTitleInput = document.querySelector("input[name='articleTitle']").value;
     const newUrlInput = document.querySelector("input[name='articleUrl']").value;
     const newDescriptionInput = document.querySelector("input[name='articleDescription']").value;
