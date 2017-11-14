@@ -9,5 +9,5 @@
     3. removes task from display
 */
 
-//Create 
+//Create
 let taskList = document.getElementById()
