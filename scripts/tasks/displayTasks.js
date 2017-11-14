@@ -26,7 +26,7 @@ const displayTasks = function (database){
         //Testing the loop...
         console.log("Yaay! The task loop is working");
         //Create a const named "taskListEl" to store the task display
-        const taskListEl = document.getElementsByClassName("task__list")[0];
+        const taskListEl = document.getElementsByClassName("display_tasks")[0];
         const length = tasks.length;
         console.log(length);
 
