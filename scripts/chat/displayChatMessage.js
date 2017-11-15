@@ -29,7 +29,7 @@ const displayChatMessages = function (database) {
             // Write messages and their related userids to the browser
             chatEl.innerHTML +=
                 `
-            <article>
+            <article class="chatUserButton">
                 <p>${currentUsername}:</p>
                 <p>${messages.chatInput}</p>
             </article>
