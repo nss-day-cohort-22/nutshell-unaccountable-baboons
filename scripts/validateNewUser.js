@@ -31,49 +31,56 @@ const validateNewUser = (username, email) => {
                         //unhide nutshell app
                         const appEl = document.querySelector(".grid")
                         setVisibility(appEl, "show")
+                        //unhide logoff button
+                        const logoffEl = document.querySelector(".logoff__button")
+                        setVisibility(logoffEl, "show")
                         //set current user as active user
                         setActiveUser(newUser)
 
-                } else {
-                    existing = true
-                     //if there are users in the database, iterate over them
-                console.log("There are users in the database - lets look at them")
-                for (let i = 0; i < existingUsers.length ; i++) {
-                //check each username and email to see if it already exists
-                const currentUser = existingUsers[i]
-                console.log("we are about to look through existing users")
-                if(currentUser.username === username || currentUser.email === email){
-                    //if either username or email exist already set found to true
-                    console.log("i found a match! in the existing users")
-                    found = true
+                    } else {
+                        existing = true
+                        //if there are users in the database, iterate over them
+                        console.log("There are users in the database - lets look at them")
+                        for (let i = 0; i < existingUsers.length ; i++) {
+                            //check each username and email to see if it already exists
+                            const currentUser = existingUsers[i]
+                            console.log("we are about to look through existing users")
+                            if(currentUser.username === username || currentUser.email === email){
+                                //if either username or email exist already set found to true
+                                console.log("i found a match! in the existing users")
+                                found = true
+                            }
+                        }
+
+                    }
+                } //END OF FIRST IF
+                if (found === true){
+                    console.log("stuff is true")
+                    alert("Sorry that username or email are already taken, please try a new one")
+                    found = false
+                } else  if((username !== "" || email !== "") && existing === true){
+                    console.log("i didn't find an existing user, so I guess ill make one and set it active")
+                    //if the requested new user and email do not exist in the database add the newUser to the database
+                    const newUser = userFactory(username, email)
+                    addUser(newUser)
+                    //hide authorization form
+                    const formEl = document.querySelector(".login")
+                    setVisibility(formEl , "hide")
+                    //unhide nutshell app
+                    const appEl = document.querySelector(".grid")
+                    setVisibility(appEl, "show")
+                    //unhide logoff button
+                    const logoffEl = document.querySelector(".logoff__button")
+                    setVisibility(logoffEl, "show")
+
+                    //set current user as active user
+                    setActiveUser(newUser)}
+
                 }
-            }
+                module.exports = validateNewUser
 
-        }
-    } //END OF FIRST IF
-    if (found === true){
-        console.log("stuff is true")
-        alert("Sorry that username or email are already taken, please try a new one")
-        found = false
-    } else  if((username !== "" || email !== "") && existing === true){
-        console.log("i didn't find an existing user, so I guess ill make one and set it active")
-        //if the requested new user and email do not exist in the database add the newUser to the database
-        const newUser = userFactory(username, email)
-        addUser(newUser)
-        //hide authorization form
-        const formEl = document.querySelector(".login")
-        setVisibility(formEl , "hide")
-        //unhide nutshell app
-        const appEl = document.querySelector(".grid")
-        setVisibility(appEl, "show")
-        //set current user as active user
-        setActiveUser(newUser)}
-
-}
-module.exports = validateNewUser
-
-//When user clicks on "Register"
-//Validate that userName DOES NOT exist && Validate that email DOES NOT exist
+                //When user clicks on "Register"
+                //Validate that userName DOES NOT exist && Validate that email DOES NOT exist
 // if DOES NOT EXIST - return userName and email - pass to userFactory.js
 // display dashboard
 // ELSE - display error message on welcome screen i.e. userName / email already exist
