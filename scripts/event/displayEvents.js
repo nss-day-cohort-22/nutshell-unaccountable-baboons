@@ -6,16 +6,18 @@ const database = require("../nutShellDB")
 
 let displayEvents = function(database){
     //grab the html Element that wil display events
-    const  eventsEl = document.querySelector(".events")
+    const  eventsEl = document.querySelector(".display_events")
     //grab the events array from the database
-    let events = database.events
+    let events = database().events
+    let eventString
     //use the finduserId module to locate the user
     // currentUserId = finduser()
-    let filteredEvents = events.filter(obj => obj.userID === currentUserId)
+    // let filteredEvents = events.filter(obj => obj.userID === currentUserId)
 
-    console.log("events array =",filteredEvents)
+    //console.log("events array =",filteredEvents)
     //iterate over the events array and display in the dom
-    filteredEvents.forEach(currentEvent => {
+    console.log(events)
+    events.forEach(currentEvent => {
         //create opening article tag that holds the event Id
         eventString += `<article class="events__article" ID = "eventId-${currentEvent.eventId}">`
         //populate the dom String with relevent event information
