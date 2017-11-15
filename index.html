@@ -36,10 +36,10 @@
   <section class="grid hidden">
 
     <section class="tasks one ">
-    <div class="display_tasks">
-      
-      <!-- tasks will be displayed here -->
-    </div>
+      <div class="display_tasks">
+        <!-- tasks will be displayed here -->
+        <button class="display_taskForm ">Add New Task</button>
+      </div>
     <div class="taskForm hidden">
         <div class="task__taskPrompt">
           Task Name:
@@ -47,7 +47,6 @@
         <div class="task__name">
           <input type="text" name="taskname">
         </div>
-        
         <div class="task__completionPrompt">
           Expected Completion Date:
         </div>
@@ -55,12 +54,14 @@
           <input type="date" name="completion">
         </div>
         <button class="task__button">Save Task</button>
-      </section>
-    </div>
-    
+      </div>
+    </section>
+
     <section class="events four">
       <div class="display_events">
         <!-- events will be displayed here -->
+        <button class="display_eventForm ">Add New Event</button>
+
       </div>
       <div class="eventForm hidden">
         <div class="event__eventPrompt">
@@ -69,81 +70,83 @@
         <div class="event__name">
           <input type="text" name="eventname">
         </div>
-        
+
         <div class="event__eventDatePrompt">
           Event Date:
         </div>
         <div class="event__eventDate">
           <input type="date" name="eventDate">
         </div>
-        
+
         <div class="event__eventLocation">
           Event Location:
         </div>
         <div class="event__location">
           <input type="text" name="eventLocation">
         </div>
-        
+
         <button class="event__button">Save Event</button>
       </div>
-      
+
     </section>
-    
+
     <section class="news five">
       <div id="display_articles">
-      <!-- articles will be displayed here -->
-      </div>
-      <!-- <div class="articleForm hidden"> -->
-        <div class=“article__articlePrompt”>
-          Article Title:
-        </div>
-        <div class=“article__title”>
-          <input type=“text” id=“articleTitle” name="articleTitle">
-        </div>
-        
-        <div class=“article__urlPrompt”>
-          Article URL:
-        </div>
-        <div class=“article__url”>
-          <input type=“url” id=“articleUrl” name="articleUrl">
-        </div>
-        
-        <div class=“article__descriptionPrompt”>
-          Article Description:
-        </div>
-        <div class=“article__description”>
-          <input type=“text” id=“shortArticleDescription“ name="articleDescription">
-        </div>
-        
-        <button class="article__button">Save Article</button>
-      <!-- </div> -->
-    </section>
-
-
-    <section class="chat">
-    <section class="chat two">
-      <div id="display_chat">
-      <!-- chat window will be displayed here -->      
-      </div>
-      
-      <div class=“chat__Prompt”>
-        Enter Message:
-      </div>
-      <div class=“chat__input”>
-        <input type=“text” class=“newChatInput“ name="newChatInput">
-      </div><button class="chat__button">Send Message</button>
-    </section>
-    
-    <section class="friends three">
-      <div class="display_friends">
-      <!-- friends will be displayed here -->
-      </div>
-      <div class="friendForm hidden">
-        <input type="text" name="find_friend_input"><button class="friend__button">Add Friend</button>
+        <!-- articles will be displayed here -->
+        <button class="display_articleForm ">Add New Article</button>
       </div>
 
+      <div class="articleForm hidden">
+      <div class=“article__articlePrompt”>
+        Article Title:
+      </div>
+      <div class=“article__title”>
+        <input type=“text” id=“articleTitle” name="articleTitle">
+      </div>
+
+      <div class=“article__urlPrompt”>
+        Article URL:
+      </div>
+      <div class=“article__url”>
+        <input type=“url” id=“articleUrl” name="articleUrl">
+      </div>
+
+      <div class=“article__descriptionPrompt”>
+        Article Description:
+      </div>
+      <div class=“article__description”>
+        <input type=“text” id=“shortArticleDescription“ name="articleDescription">
+      </div>
+
+      <button class="article__button">Save Article</button>
+      </div>
     </section>
-  </section>
+
+      <section class="chat two">
+        <div id="display_chat">
+          <!-- chat window will be displayed here -->
+        </div>
+
+        <div class=“chat__Prompt”>
+          Enter Message:
+        </div>
+        <div class=“chat__input”>
+          <input type=“text” class=“newChatInput“ name="newChatInput">
+        </div><button class="chat__button">Send Message</button>
+      </section>
+
+      <section class="friends three">
+        <div class="display_friends">
+          <!-- friends will be displayed here -->
+          <button class="display_friendForm ">Search For A Friend</button>
+        </div>
+        <div class="friendForm hidden">
+          <input type="text" name="find_friend_input"><button class="friend__button">Add Friend</button>
+        </div>
+
+      </section>
+    </section>
+
 
 
   <footer class="footer" align="center">
