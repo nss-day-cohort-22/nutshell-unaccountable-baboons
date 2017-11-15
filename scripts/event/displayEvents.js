@@ -2,7 +2,7 @@
 database = require("../nutShellDB")
 let displayEvents = function(){
     //grab the html Element that wil display events
-    const  eventsEl = document.querySelector(".display_events")
+    const  eventsEl = document.getElementById("display_events")
     //grab the events array from the database
     let events = database().events
     let eventString = ""

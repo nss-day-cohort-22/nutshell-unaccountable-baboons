@@ -8,7 +8,7 @@ const events = require("./displayEvents")
 const saveEvent = document.querySelector(".event__button")
 
 //grab new event button
-const newEvent = document.querySelector(".display_eventForm")
+const newEvent = document.querySelector(".randomMonkeyButt")
 
 //grab event form
 const eventForm = document.querySelector(".eventForm")
@@ -16,7 +16,7 @@ const eventForm = document.querySelector(".eventForm")
 //add the eventlistener to the saveEvent button
 newEvent.addEventListener("click", (event) => {
   // hide button
-  setVisibility(newEvent, "hide")
+  // setVisibility(newEvent, "hide")
   // show form
   setVisibility(eventForm, "show")
 })
@@ -32,6 +32,7 @@ saveEvent.addEventListener("click", (event) => {
     //pass the information to the event factory - create new event
   let newEvent =   createNewEvent(eventName, eventDate, eventLocation)
     addEvent(newEvent)
+    events()
 
     //hide form
     setVisibility(eventForm, "hide")
@@ -39,6 +40,5 @@ saveEvent.addEventListener("click", (event) => {
     setVisibility(newEvent, "show")
     //events() <-- commented out on purpose
 
-    events()
 })
 module.exports = saveEvent.addEventListener

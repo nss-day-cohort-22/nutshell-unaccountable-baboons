@@ -35,9 +35,9 @@ saveArticleButton.addEventListener("click", (event) => {
   addArticleToDatabase(newArticle);
   article(database)
   //hide form
-  setVisibility(eventForm, "hide")
-  //show new event button under displayed tasks
-  setVisibility(newEvent, "show")
+  setVisibility(articleForm, "hide")
+  //show new article button under displayed articles
+  setVisibility(newArticleBtn, "show")
 })
 
 
