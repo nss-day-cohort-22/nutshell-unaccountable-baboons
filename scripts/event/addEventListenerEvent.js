@@ -1,6 +1,7 @@
 //author Ray //Purpose this module adds an event listener to the event buttons
 const createNewEvent = require("./createNewEvent")
 const addEvent = require("./saveEventToDb")
+const events = require("./displayEvents")
 //grab the save event button
 const saveEvent = document.querySelector(".event__button")
 
@@ -15,5 +16,6 @@ saveEvent.addEventListener("click", (event) => {
     //pass the information to the event factory - create new event
   let newEvent =   createNewEvent(eventName, eventDate, eventLocation)
     addEvent(newEvent)
+    //events() <-- commented out on purpose
 })
 module.exports = saveEvent.addEventListener
