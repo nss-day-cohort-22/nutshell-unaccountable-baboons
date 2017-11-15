@@ -2,6 +2,7 @@
 const setVisibility = require("../setVisibility")
 const createNewEvent = require("./createNewEvent")
 const addEvent = require("./saveEventToDb")
+const events = require("./displayEvents")
 
 //grab the save event button
 const saveEvent = document.querySelector(".event__button")
@@ -32,9 +33,10 @@ saveEvent.addEventListener("click", (event) => {
   let newEvent =   createNewEvent(eventName, eventDate, eventLocation)
     addEvent(newEvent)
 
-  //hide form
-  setVisibility(eventForm, "hide")
-  //show new event button under displayed tasks
-  setVisibility(newEvent, "show")
+    //hide form
+    setVisibility(eventForm, "hide")
+    //show new task button under displayed tasks
+    setVisibility(newEvent, "show")
+    //events() <-- commented out on purpose
 })
 module.exports = saveEvent.addEventListener
