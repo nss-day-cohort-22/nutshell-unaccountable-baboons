@@ -31,5 +31,9 @@ login.addEventListener("click", (event)=>{
     //pass the username and email to the validateExistingUser Module \
     validateExistingUser(username, email)
     chat(database)
+
+
+
+
     events(database)
 })
