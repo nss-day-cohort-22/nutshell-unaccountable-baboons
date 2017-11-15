@@ -20,6 +20,8 @@ register.addEventListener("click", (event) => {
     //pass the username and email to the validateNewUser function when the register button is pressed.
     validateNewUser(username, email)
     chat(database)
+    article(database)
+    events(database)
 })
 
 
@@ -31,9 +33,6 @@ login.addEventListener("click", (event)=>{
     //pass the username and email to the validateExistingUser Module \
     validateExistingUser(username, email)
     chat(database)
-
-
-
-
+    article(database)
     events(database)
 })
