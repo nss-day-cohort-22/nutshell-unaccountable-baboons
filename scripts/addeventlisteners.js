@@ -13,7 +13,6 @@ const displayTasks = require("./tasks/displayTasks")
 const displayOnline = require("./Friends/displayfriends")
 
 
-const logOff = document.querySelector(".logoff__button")
 const login = document.querySelector(".button--login")
 const register = document.querySelector(".button--newAccount")
 
@@ -46,8 +45,6 @@ login.addEventListener("click", (event)=>{
     chat(database)
     events(database)
     article(database)
-
     displayOnline(database)
-
     displayTasks(database)
 })

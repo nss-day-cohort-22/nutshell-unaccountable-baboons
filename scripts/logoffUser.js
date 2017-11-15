@@ -9,6 +9,8 @@ const userLogOff = () => {
 sessionStorage.clear()
 //hide grid
 setVisibility(".grid", "hide")
+//hide logoff button
+setVisibility(".logoff__button", "hide")
 //show nutshell
 setVisibility(".login", "show")
 }
