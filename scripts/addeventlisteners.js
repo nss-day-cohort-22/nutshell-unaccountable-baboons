@@ -11,7 +11,12 @@ const chat = require("./chat/displayChatMessage")
 const events = require("./event/displayEvents")
 const database = require("./nutShellDB")
 const article = require("./articles/displayArticles")
+
+const displayOnline = require("./Friends/displayfriends")
+
+
 const displayTasks = require("./tasks/displayTasks")
+
 
 
 //add event listener to the register button
@@ -24,7 +29,11 @@ register.addEventListener("click", (event) => {
     chat(database)
     events(database)
     article(database)
+
+    displayOnline(database)
+
     displayTasks(database)
+
 })
 
 
@@ -39,5 +48,8 @@ login.addEventListener("click", (event)=>{
     chat(database)
     events(database)
     article(database)
+
+    displayOnline(database)
+
     displayTasks(database)
 })
