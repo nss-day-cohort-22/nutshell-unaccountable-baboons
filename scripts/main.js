@@ -5,5 +5,7 @@ const addeventtaskhandler = require("./tasks/addEventHandlerTasks")
 const addeventarticleshandler = require("./articles/addEventHandlerArticles")
 const addeventeventlistener = require("./event/addEventListenerEvent")
 const displayOnline = require("./Friends/displayfriends")
+const checkforActiveUser = require("./checkforActiveUser")
 
-setVisibility(document.querySelector(".login"), "show")
+checkforActiveUser()
+//setVisibility(document.querySelector(".login"), "show")
