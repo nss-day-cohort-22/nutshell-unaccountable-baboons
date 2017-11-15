@@ -18,24 +18,27 @@ const displayTasks = function (database){
 
            //Create const to get the input values of the task name and completion date... (Need class names and add class to input html)
             let tasks = database().tasks
+            let stringEl = ""
             const taskListEl = document.getElementsByClassName("display_tasks")[0];
             //const length = tasks.length
+            taskListEl.innerHTML = ""
             if (tasks.length > 0) {
                 console.log("we did it!")
             //Create a loop to cycle thru each task saved in database
             tasks.forEach(function(task){
 
                //Testing the loop...
-                console.log("Yaay! The task loop is working");
+                console.log("Yaay! The task loop is looking at", task);
                 //Create a const named “taskListEl” to store the task display
                 //console.log(length);
 
                //and post a check box, task name, and completion date
-                taskListEl.innerHTML += `
-                    <li> <input type=“checkbox” name=“complete” value=“${tasks[0].Task_ID}“>
-                    ${tasks[0].Task_Name} ${tasks[0].Completion_Date} </li>
+                stringEl += `
+                    <p> <input class="box" type=“checkbox” name=“complete”>
+                    ${task.Task_Name} ${task.Completion_Date} </p>
                     `;
             });
+            taskListEl.innerHTML += stringEl
             } else {
             console.log("you have no tasks");
                 }
