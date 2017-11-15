@@ -38,5 +38,7 @@ saveEvent.addEventListener("click", (event) => {
     //show new task button under displayed tasks
     setVisibility(newEvent, "show")
     //events() <-- commented out on purpose
+
+    events()
 })
 module.exports = saveEvent.addEventListener

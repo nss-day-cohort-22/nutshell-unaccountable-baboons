@@ -1,7 +1,7 @@
 //author Ray Purpose: this module will create a new event and push it into the database
 const nutshell = require("../nutShellDB")
 const idGenerator = require("../idGenerator")
-let lastid;
+let lastid = 0
 
 
 
@@ -19,13 +19,15 @@ const createNewEvent = function (eventName, eventDate, eventLocation) {
    if (events.length !== 0) {
     let sortedEvents = db.events.sort((p,n) => n.eventId - p.eventId)
     console.log("these are the sorted events",sortedEvents)
-        lastid = sortedEvents[0].eventId
+
+    nextId = idGenerator(sortedEvents[0].eventId).next().value;
         console.log("this is what i've decided the last Id is",lastid)
-   } else {
-       lastid = 0
+   } else if(events.length === 0) {
+    nextId = idGenerator(0).next().value;
+
     }
 
-    nextId = idMaker.next().value;
+
 
     return Object.create(null, {
         "eventId" : {
