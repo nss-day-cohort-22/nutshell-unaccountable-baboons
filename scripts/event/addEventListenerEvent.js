@@ -16,6 +16,6 @@ saveEvent.addEventListener("click", (event) => {
     //pass the information to the event factory - create new event
   let newEvent =   createNewEvent(eventName, eventDate, eventLocation)
     addEvent(newEvent)
-    //events() <-- commented out on purpose
+    events()
 })
 module.exports = saveEvent.addEventListener

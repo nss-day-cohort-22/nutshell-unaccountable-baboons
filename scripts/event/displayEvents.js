@@ -6,7 +6,7 @@ let displayEvents = function(){
     //grab the events array from the database
     let events = database().events
     let eventString = ""
-
+    eventsEl.innerHTML = ""
     //iterate over each entry in the database and build up dom sting
     events.forEach(currentEvent => {
         //create opening article tag that holds the event Id
