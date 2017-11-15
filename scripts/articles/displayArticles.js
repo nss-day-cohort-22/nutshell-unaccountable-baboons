@@ -34,12 +34,6 @@ const displayArticleList = function (database) {
 
     else {
         console.log("no articles");
-        articleEl.innerHTML =
-            `
-        <article>
-        <p>Add some articles to read!</p>
-        </article>
-        `
     }
 }
 
