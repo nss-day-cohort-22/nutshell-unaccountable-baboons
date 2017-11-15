@@ -10,6 +10,7 @@ const login = document.querySelector(".button--login")
 const chat = require("./chat/displayChatMessage")
 const events = require("./event/displayEvents")
 const database = require("./nutShellDB")
+const article = require("./articles/displayArticles")
 
 
 //add event listener to the register button
@@ -21,6 +22,7 @@ register.addEventListener("click", (event) => {
     validateNewUser(username, email)
     chat(database)
     events(database)
+    article(database)
 })
 
 
@@ -33,4 +35,5 @@ login.addEventListener("click", (event)=>{
     validateExistingUser(username, email)
     chat(database)
     events(database)
+    article(database)
 })
