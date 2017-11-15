@@ -16,7 +16,6 @@ const createNewEvent = function (eventName, eventDate, eventLocation) {
 
    let currentUserId = JSON.parse(sessionStorage.getItem("activeUser"))
    //sorting the users.  If there is no user in local storage, start at one.  Otherwise, look at the last user's userID in local storage and add one to create the new user ID.
-    debugger
    if (events.length !== 0) {
     let sortedEvents = db.events.sort((p,n) => n.eventId - p.eventId)
     console.log("these are the sorted events",sortedEvents)
