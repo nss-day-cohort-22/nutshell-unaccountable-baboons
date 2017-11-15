@@ -4,6 +4,8 @@
 const setVisibility = require("../setVisibility")
 const taskFactory = require("./createNewTask")
 const addTask = require("./saveTaskToDb")
+const displayTasks = require("./displayTasks")
+const database = require("../nutShellDB")
 
 
 //Grab "display_taskForm" via query selector and assign to variable
@@ -38,7 +40,9 @@ taskButton.addEventListener("click", (inputTask) => {
     setVisibility(taskForm, "hide")
     //show new task button under displayed tasks
     setVisibility(newTaskButton, "show")
-    //display new task??
+
+    //display new task
+    displayTasks(database)
 
 })
 
