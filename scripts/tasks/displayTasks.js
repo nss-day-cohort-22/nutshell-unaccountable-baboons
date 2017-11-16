@@ -34,7 +34,7 @@ const displayTasks = function (database){
 
                //and post a check box, task name, and completion date
                 stringEl += `
-                    <p> <input class="box" type=“checkbox” name=“complete”>
+                    <p> <input type="checkbox" name="${task.Task_ID}">
                     ${task.Task_Name} ${task.Completion_Date} </p>
                     `;
             });

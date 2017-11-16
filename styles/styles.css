@@ -47,11 +47,6 @@ img {
     display: inline;
     text-align: left;
 }
-.box {
-    width: 15px;
-    margin: 0;
-    padding: 0;
-}
 
 .grid {
     /* border: solid 1px black; */
