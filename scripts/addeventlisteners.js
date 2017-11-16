@@ -5,17 +5,16 @@ const setVisibility = require("./setVisibility")
 const setActiveUser = require("./activeUser")
 const validateExistingUser = require("./validateExistingUser")
 const validateNewUser = require("./validateNewUser")
-const register = document.querySelector(".button--newAccount")
-const login = document.querySelector(".button--login")
 const chat = require("./chat/displayChatMessage")
 const events = require("./event/displayEvents")
 const database = require("./nutShellDB")
 const article = require("./articles/displayArticles")
-
+const displayTasks = require("./tasks/displayTasks")
 const displayOnline = require("./Friends/displayfriends")
 
 
-const displayTasks = require("./tasks/displayTasks")
+const login = document.querySelector(".button--login")
+const register = document.querySelector(".button--newAccount")
 
 
 
@@ -29,9 +28,7 @@ register.addEventListener("click", (event) => {
     chat(database)
     events(database)
     article(database)
-
     displayOnline(database)
-
     displayTasks(database)
 
 })
@@ -48,8 +45,6 @@ login.addEventListener("click", (event)=>{
     chat(database)
     events(database)
     article(database)
-
     displayOnline(database)
-
     displayTasks(database)
 })

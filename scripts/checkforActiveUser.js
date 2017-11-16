@@ -22,6 +22,7 @@ checkforActiveUser = function (){
         displayOnline(database)
         displayTasks(database)
         setVisibility(document.querySelector(".grid"), "show")
+        setVisibility(document.querySelector(".logoff__button"), "show")
 
     } else {
         //if no activeUser then show the login screen

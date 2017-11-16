@@ -23,6 +23,9 @@ const validateExistingUser = (username, email) => {
                //unhide nutshell app
                const appEl = document.querySelector(".grid")
                setVisibility(appEl, "show")
+               //unhide logoff button
+               const logoffEl = document.querySelector(".logoff__button")
+               setVisibility(logoffEl,"show")
             }
         }
         //if user is not found - display message to user

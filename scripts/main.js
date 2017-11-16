@@ -6,6 +6,6 @@ const addeventarticleshandler = require("./articles/addEventHandlerArticles")
 const addeventeventlistener = require("./event/addEventListenerEvent")
 const displayOnline = require("./Friends/displayfriends")
 const checkforActiveUser = require("./checkforActiveUser")
-
+const addEventListenerLogoff = require("./addEventListenerLogoff")
 checkforActiveUser()
 //setVisibility(document.querySelector(".login"), "show")
