@@ -8,10 +8,10 @@ const userLogOff = () => {
 //clear sessionStorage
 sessionStorage.clear()
 //hide grid
-setVisibility(".grid", "hide")
+setVisibility(document.querySelector(".grid"), "hide")
 //hide logoff button
-setVisibility(".logoff__button", "hide")
+setVisibility(document.querySelector(".logoff__button"), "hide")
 //show nutshell
-setVisibility(".login", "show")
+setVisibility(document.querySelector(".login"), "show")
 }
 module.exports = userLogOff
