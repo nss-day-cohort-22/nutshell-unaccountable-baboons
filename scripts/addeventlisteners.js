@@ -15,6 +15,7 @@ const displayOnline = require("./Friends/displayfriends")
 
 const login = document.querySelector(".button--login")
 const register = document.querySelector(".button--newAccount")
+const form = document.getElementById("loginForm")
 
 
 
@@ -30,7 +31,7 @@ register.addEventListener("click", (event) => {
     article(database)
     displayOnline(database)
     displayTasks(database)
-
+    form.reset()
 })
 
 
@@ -47,4 +48,5 @@ login.addEventListener("click", (event)=>{
     article(database)
     displayOnline(database)
     displayTasks(database)
+    form.reset()
 })
